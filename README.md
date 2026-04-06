@@ -1,23 +1,31 @@
-Mini REST API: Auth & Posts (Node.js + MongoDB)
+# Mini REST API: Auth & Posts
 
-A simple RESTful API in Node.js for registration, login, and post management.
-Users can register and log in with JWT. After login, users can create posts stored in MongoDB.
-Passwords are hashed with bcrypt.
+A simple RESTful API built with Node.js and MongoDB. Supports user registration and login with JWT authentication, and basic post management for authorized users.
 
-Features
-• User registration with password hashing (bcrypt).
-• Login with JWT token; protected routes for posts.
-• Create and read posts (only for authorized users).
-• Simple routing with Express Router: /auth, /posts.
+## Tech Stack
 
-Tech Stack
-• Node.js, Express (web server, routing).
-• MongoDB (data), official MongoDB driver / Mongoose (optional in future).
-• bcrypt (password hashing), jsonwebtoken (JWT).
-• dotenv (environment variables), Postman (API testing).
+- **Node.js, Express** — server and routing
+- **MongoDB, Mongoose** — data storage
+- **bcrypt** — password hashing
+- **jsonwebtoken** — JWT authentication
+- **dotenv** — environment variables
 
-Endpoints (basic)
-• POST /auth/register — create a new user (hash password, save user).
-• POST /auth/login — login and receive a JWT token.
-• GET /posts — get all posts (JWT required).
-• POST /posts — create a new post (JWT required).
+## Features
+
+- User registration with hashed passwords
+- Login with JWT token
+- Protected routes for authorized users only
+- Create and read posts
+
+## Endpoints
+
+| Method | Endpoint | Description | Auth |
+|--------|----------|-------------|------|
+| POST | `/auth/register` | Register a new user | — |
+| POST | `/auth/login` | Login and receive JWT | — |
+| GET | `/posts` | Get all posts | ✅ |
+| POST | `/posts` | Create a new post | ✅ |
+
+## Testing
+
+API tested manually via Postman.
